@@ -1,0 +1,13 @@
+{% include 'base.html' %}
+<title>Компания "Квант" Товары</title>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/goods/index.css' %}">
+{% if goods_list %}
+    <ul>
+    {% for good in goods_list %}
+        <li><a href="/goods/{{ good.id }}/">{{ good.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No goods are available.</p>
+{% endif %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Компания "Квант" Товары</title>
+</head>
+{% include 'base.html' %}
+{% load static %}
+<form action="" method="post" onchange="form.submit();">
+    {% csrf_token %}
+{{ form.seek }}
+{{ form.category1 }}
+{% ifchanged form.category1 %}
+    <script type="text/javascript">
+        form.submit();
+    </script>
+{% endifchanged %}
+{{ form.cat1_id }}
+{{ form.category2 }}
+    <input type="submit" value="Найти">
+<ul>
+
+        {% for good in good_list %}
+            <li>
+                {{ good.name }}
+            </li>
+        {% empty %}
+             <li>
+                 пока нет товаров
+             </li>
+        {% endfor %}
+
+</ul>
+</form>
+</html>

@@ -1,0 +1,6 @@
+{% include 'base.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/goods/detail.css' %}">
+<p id="good">Товар: {{ good }}</p>
+<p id="code">Код товара: {{ id }}</p>
+<p id="description">Описание: {{ description }}</p>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Компания "Квант" О компании</title>
+</head>
+{% include 'base.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/comments/comments.css' %}">
+<body>
+    <h3 class="a1">
+        Уважаемые клиенты, вы можете оставить отзыв о работе нашей компании. Ваш отзыв поможет нам
+        устранить недостатки в нашей работе, повысить уровень обслуживания.
+    </h3>
+    <h2 class="a2">Отзывы клиентов компании:</h2>
+<ul>
+{% for comments in comments_list %}
+    <li>
+        {{ comments.comment_date|date:'d.m.Y' }} :  <br> {{ comments.comment_text }} - {{ comments.comment_sign }}
+        <br>
+        {{ comments.answer_for_comment }}  -  {{comments.answer_sign}}
+    </li>
+{% empty %}
+    <li>пока нет отзывов</li>
+{% endfor %}
+</ul>
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; первая</a>
+            <a href="?page={{ page_obj.previous_page_number }}">предыдущая</a>
+        {% endif %}
+
+        <span class="current">
+            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">следующая</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">последняя &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+<a class="but" href="/comments/new_comment/">Оставить отзыв</a>
+</body>
+</html>
