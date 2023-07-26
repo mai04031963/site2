@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Свойства товара</title>
+</head>
+<body>
+    {% csrf_token %}
+    <header>
+        {% include 'base.html' %}
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static '/goods/propeties.css' %}">
+    </header>
+    {# {{ id }} <br> #}
+<div id="desk">
+    <br><br>
+    <p id="name">
+        <span>Наименование товара: {{ name }} </span>
+    </p>
+    <p id="description">
+        {% if description %}
+        <span> Описание: {{ description }} </span>
+        {% endif %}
+    </p>
+    <p id="article">
+        <span> Артикул: {{ article }} </span>
+    </p>
+    <p id="catalog">
+        <span> Каталожный номер: {{ catalog_number }} </span>
+    </p>
+    <p id="in_stock">
+        <span> Количество на складе: {{ in_stock }} </span>
+    </p>
+    <p id="price">
+        <span> {{ price }} </span>
+    </p>
+</div>
+</body>

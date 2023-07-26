@@ -1,0 +1,4 @@
+@charset="utf-8";
+
+li a {color:green}
+li a:hover {color:red}

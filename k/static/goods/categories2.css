@@ -1,0 +1,16 @@
+body {}
+header {position: relative; z-index:3}
+p#search {position: relative; left: 60px}
+p#cat {position: relative; left: 40px}
+.categories1 {left: 10px; top: 100px; list-style-type: none; width: 250px}
+.cat1 {text-decoration-line: none}
+.categories2 {list-style-type: none; width: 250px}
+.cat2 {text-decoration-line: none}
+.categories3 {list-style-type: none; width: 250px}
+.cat3 {text-decoration-line: none}
+.pagination {position: absolute; left: 450px; top: 130px}
+.title {width: 500px}
+.good {position: absolute; left: 400px; top: 250px; list-style-type: none;}
+.g {text-decoration-line: none}
+.aside{position: absolute; left: 1000px; top: 150px;}
+li#g {margin-bottom: 1em; width: 500px}
